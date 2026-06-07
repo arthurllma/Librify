@@ -2,7 +2,7 @@ package br.unifor.librify.ui.features.chat
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import kotlinx.coroutines.delay
+import br.unifor.librify.data.remote.GeminiService
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -23,6 +23,9 @@ class ChatViewModel : ViewModel() {
     private val _inputText = MutableStateFlow("")
     val inputText: StateFlow<String> = _inputText.asStateFlow()
 
+    private val _isLoading = MutableStateFlow(false)
+    val isLoading: StateFlow<Boolean> = _isLoading.asStateFlow()
+
     fun onInputTextChange(value: String) {
         _inputText.value = value
     }
@@ -36,15 +39,12 @@ class ChatViewModel : ViewModel() {
         _messages.value = _messages.value + userMsg
         _inputText.value = ""
 
-        // Simulated Assistant Response
+        // Real AI Response using Gemini
         viewModelScope.launch {
-            delay(1000)
-            val responseText = when {
-                text.contains("livro", ignoreCase = true) -> "Você pode encontrar diversos livros na aba de Catálogo!"
-                text.contains("publicar", ignoreCase = true) -> "Para publicar uma obra, acesse a aba 'Publicar' no menu inferior."
-                else -> "Entendi! Vou verificar essa informação para você."
-            }
+            _isLoading.value = true
+            val responseText = GeminiService.getResponse(text)
             _messages.value = _messages.value + ChatMessage(responseText, false)
+            _isLoading.value = false
         }
     }
 }

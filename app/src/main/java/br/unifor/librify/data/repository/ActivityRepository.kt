@@ -44,6 +44,14 @@ object ActivityRepository {
     )
     val publications: StateFlow<List<Publication>> = _publications.asStateFlow()
 
+    // Auth State
+    private val _isAdmin = MutableStateFlow(false)
+    val isAdmin: StateFlow<Boolean> = _isAdmin.asStateFlow()
+
+    fun setAdmin(admin: Boolean) {
+        _isAdmin.value = admin
+    }
+
     fun getBookById(id: String): Book? {
         return allBooks.find { it.id == id }
     }
