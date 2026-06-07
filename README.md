@@ -1,87 +1,79 @@
-# Librify - Biblioteca Virtual Acadêmica (UNIFOR)
+# Librify Mobile 📱📖
 
-O **Librify** é um aplicativo mobile nativo desenvolvido como um projeto de extensão universitária para a **UNIFOR**. O objetivo principal da plataforma é facilitar o compartilhamento, a circulação e o acesso a obras acadêmicas e literárias entre a comunidade universitária, promovendo a democratização do conhecimento.
+O **Librify Mobile** é um aplicativo Android nativo de biblioteca virtual acadêmica, projetado para modernizar a experiência de leitura e gestão de obras na comunidade universitária. O app permite automatizar o processo de reservas de livros, consulta de acervo em tempo real e a publicação colaborativa de obras acadêmicas por parte dos alunos.
 
-## 🚀 Arquitetura e Tecnologias
+Este software foi desenvolvido como parte de um **Projeto de Extensão da Universidade de Fortaleza (UNIFOR)**, integrando conceitos práticos de Engenharia de Software, Arquitetura de Sistemas e Desenvolvimento Mobile Nativo.
 
-O projeto foi construído seguindo as melhores práticas de desenvolvimento Android moderno:
+---
 
-*   **Linguagem:** [Kotlin](https://kotlinlang.org/) (100% nativo).
-*   **Interface UI:** [Jetpack Compose](https://developer.android.com/jetpack/compose) (Arquitetura declarativa).
-*   **Design System:** [Material Design 3](https://m3.material.io/) com identidade visual personalizada (Azul UNIFOR #1A73E8).
-*   **Padrão de Arquitetura:** **MVVM** (Model-View-ViewModel) para separação clara de responsabilidades.
-*   **Gerenciamento de Estado:** `StateFlow` e `MutableStateFlow` garantindo o *Unidirectional Data Flow* (UDF).
-*   **Padrão de Dados:** **Repository Pattern** (implementado via Singleton `ActivityRepository`) para compartilhamento de estado global e reatividade em tempo real entre telas.
-*   **Navegação:** `Navigation Compose` com suporte a rotas parametrizadas e gerenciamento de pilha (backstack).
+## 🏛️ Contexto Acadêmico
+* **Instituição:** Universidade de Fortaleza (UNIFOR)
+* **Curso:** Ciência da Computação
+* **Disciplina:** Requisitos e Modelagem de Sistemas
+* **Natureza:** Projeto de Extensão Universitária
+* **Orientador/Professor:** Dr. Pedro Pinheiro
 
-## ✨ Funcionalidades Implementadas
+---
 
-### 🔐 Autenticação e Segurança
-*   **Fluxo Completo:** Telas de Login, Cadastro e Recuperação de Senha.
-*   **Segurança de Navegação:** Lógica de `popUpTo` e `inclusive` no Logout para limpar o histórico e proteger o acesso pós-sessão.
+## ✨ Funcionalidades Principais (Escopo Mobile)
 
-### 🏠 Home e Descoberta
-*   **Destaque Mensal:** Banner proeminente com o "Livro do Mês" e acesso rápido a detalhes.
-*   **Seções Inteligentes:** Carrosséis horizontais de "Livros em destaque" e "Recomendados para você".
+O sistema foi totalmente modelado via UML (Casos de Uso e Diagramas de Atividades) e implementado com base nos requisitos funcionais adaptados para a experiência mobile nativa:
 
-### 📚 Catálogo e Detalhes
-*   **Busca Reativa:** Filtragem em tempo real por título ou autor através da `CatalogViewModel`.
-*   **Filtros por Categoria:** Uso de `FilterChips` para navegação rápida entre gêneros acadêmicos.
-*   **Detalhes do Livro:** Tela rica com sinopse, especificações técnicas e sistema de avaliações (estrelas e comentários).
-*   **Ações de Usuário:** Funcionalidades de Reserva de Livro e Adição à Lista Pessoal.
+*   **🔐 Autenticação Mobile (RF01 - RF03):** Login, Cadastro e Recuperação de Senha com persistência de estado e segurança de navegação (limpeza de pilha no logout).
+*   **🏠 Home e Destaque (RF05 - RF06):** Interface intuitiva com banner dinâmico do "Livro do Mês" e carrosséis de recomendação personalizados.
+*   **🔍 Catálogo e Busca (RF07):** Pesquisa reativa por título ou autor com filtragem instantânea via Chips de categorias acadêmicas.
+*   **📖 Detalhes e Reservas (RF08):** Tela de especificações completa com fluxos de reserva imediata e adição à lista de leitura.
+*   **⭐ Avaliação Colaborativa (RF09):** Sistema de feedback com notas de 1 a 5 estrelas e listagem de comentários de outros leitores.
+*   **📜 Histórico e Prazos (RF10 - RF11):** Painel de controle para o usuário monitorar empréstimos ativos, reservas pendentes e histórico de devoluções.
+*   **📤 Publicação Acadêmica (RF12 - RF13):** Formulário de envio de obras (PDF) com acompanhamento de status em tempo real (Em análise/Aprovado).
+*   **🤖 Assistente Virtual (RF14):** Chat interativo integrado para suporte ao usuário e dúvidas sobre o acervo.
+*   **🛡️ Painel Administrativo:** Interface exclusiva para moderadores realizarem a aprovação ou rejeição de publicações diretamente no app.
 
-### ✍️ Publicação e Gestão (Fluxo Central)
-*   **Envio de Obras:** Formulário vertical completo com simulação de upload de arquivo PDF.
-*   **Acompanhamento de Status:** Badges coloridos (Em análise, Aprovado, Rejeitado) que atualizam reativamente conforme a moderação.
+---
 
-### 📜 Histórico e Atividades
-*   **Divisão por Abas:** Uso de `TabRow` para separar "Atividades Atuais" (Empréstimos/Reservas) de "Histórico Passado".
+## 🚀 Tecnologias Utilizadas
 
-### 👤 Perfil e Administração
-*   **Central do Usuário:** Gestão de conta e acesso a notificações.
-*   **Assistente Virtual:** Chat interativo com respostas automáticas simuladas via `ChatViewModel`.
-*   **Painel Administrativo:** Interface exclusiva para moderadores aprovarem ou rejeitarem publicações, com impacto imediato no repositório global.
+Para garantir performance, fluidez e uma arquitetura escalável (Enterprise Level), utilizamos o stack tecnológico mais moderno da plataforma Android:
 
-## 📁 Estrutura de Diretórios
+*   **Linguagem:** [Kotlin](https://kotlinlang.org/) (Corrotinas e Flow para processamento assíncrono).
+*   **UI Framework:** [Jetpack Compose](https://developer.android.com/jetpack/compose) (Desenvolvimento declarativo e reativo).
+*   **Design System:** [Material Design 3](https://m3.material.io/) (Identidade visual customizada com as cores da UNIFOR).
+*   **Arquitetura:** **MVVM** (Model-View-ViewModel) com separação rigorosa de camadas.
+*   **Data Management:** **Repository Pattern** com implementação Singleton para sincronização de estado global em tempo real.
+*   **Navegação:** `Navigation Compose` com suporte a rotas parametrizadas e transições suaves.
+
+---
+
+## 📁 Estrutura de Arquitetura (MVVM)
 
 ```text
 br.unifor.librify/
-├── data/
-│   └── repository/
-│       └── ActivityRepository.kt       # Singleton (In-memory Database)
-├── domain/
-│   └── model/
-│       ├── Book.kt                    # Modelo de Livros
-│       ├── Loan.kt                    # Modelo de Empréstimos/Reservas
-│       ├── Publication.kt             # Modelo de Submissões
-│       └── Review.kt                  # Modelo de Avaliações
+├── data/repository/           # Camada de Dados (ActivityRepository - Singleton)
+├── domain/model/              # Regras de Negócio (Entidades: Book, Loan, Publication, Review)
 ├── ui/
-│   ├── components/                    # Componentes Core (LibrifyButton, BookCard)
-│   ├── features/                      # Módulos por funcionalidade
-│   │   ├── admin/                     # Painel de Aprovação
-│   │   ├── auth/                      # Login, Register, ForgotPassword
-│   │   ├── bookdetail/                # Tela de Detalhes
-│   │   ├── catalog/                   # Busca e Filtros
-│   │   ├── chat/                      # Assistente Virtual
-│   │   ├── history/                   # Atividades e Prazos
-│   │   ├── home/                      # Dashboard Inicial
-│   │   ├── profile/                   # Perfil do Usuário
-│   │   └── publish/                   # Formulário de Publicação
-│   ├── navigation/
-│   │   ├── LibrifyNavGraph.kt         # Grafo de Navegação Central
-│   │   └── MainScreen.kt              # Container da Barra Inferior
-│   └── theme/                         # Design System (Color.kt, Theme.kt)
-└── MainActivity.kt                    # Ponto de Entrada do App
+│   ├── components/            # UI Atoms (Botões, Cards, TextFields padronizados)
+│   ├── features/              # Módulos por Funcionalidade (Telas e ViewModels)
+│   │   ├── auth/              # Login, Register, ForgotPassword
+│   │   ├── catalog/           # Busca e Filtros
+│   │   ├── bookdetail/        # Detalhes e Ações
+│   │   ├── history/           # Gestão de Empréstimos
+│   │   ├── publish/           # Envio de Obras
+│   │   ├── chat/              # Suporte via IA Simulada
+│   │   └── admin/             # Moderação de Conteúdo
+│   ├── navigation/            # LibrifyNavGraph e MainScreen (BottomBar)
+│   └── theme/                 # Design System (Color.kt, Theme.kt)
+└── MainActivity.kt            # Entry Point
 ```
 
-## 🛠️ Como Executar o Projeto
+---
 
-1.  **Pré-requisitos:** Certifique-se de ter o [Android Studio (Ladybug ou superior)](https://developer.android.com/studio) instalado.
-2.  **Clonar/Abrir:** Abra o projeto no Android Studio selecionando a pasta raiz `Librify`.
-3.  **Sincronização:** Aguarde o término do **Gradle Sync** para baixar as dependências (Compose, Navigation, Icons Extended).
-4.  **Emulador:** No *Device Manager*, inicie um emulador (recomendado API 33+).
-5.  **Rodar:** Clique no botão verde **Run 'app'** (ou `Shift + F10`).
-6.  **Testar:** Na tela de login, clique em **"Entrar"** para acessar a experiência completa com dados simulados reativos.
+## 🛠️ Como Executar o App
+
+1.  **Requisitos:** Android Studio (Versão Ladybug ou superior) e JDK 17+.
+2.  **Clone:** Importe o projeto no Android Studio.
+3.  **Sincronização:** Aguarde o Gradle baixar as dependências (`material-icons-extended`, `navigation-compose`, etc).
+4.  **Emulador:** Recomenda-se um dispositivo com API 33 (Android 13) ou superior.
+5.  **Execução:** Clique em **Run 'app'** e acesse com qualquer credencial (Simulação Reativa).
 
 ---
-*Desenvolvido como projeto de extensão para a UNIFOR.*
+*Projeto de Extensão Universitária - Universidade de Fortaleza (UNIFOR)*
