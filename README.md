@@ -38,6 +38,7 @@ O **Librify Mobile** é um aplicativo Android nativo de biblioteca virtual acad�
 | **Curso** | Ciência da Computação |
 | **Disciplina** | Requisitos e Modelagem de Sistemas |
 | **Orientador** | Dr. Pedro Pinheiro |
+| **Período** | 2026.1 |
 
 ---
 
