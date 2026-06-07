@@ -6,7 +6,7 @@
   <img src="https://img.shields.io/badge/Platform-Android-3DDC84?logo=android&logoColor=white&style=for-the-badge" alt="Android">
   <img src="https://img.shields.io/badge/Language-Kotlin-7F52FF?logo=kotlin&logoColor=white&style=for-the-badge" alt="Kotlin">
   <img src="https://img.shields.io/badge/UI-Jetpack%20Compose-4285F4?logo=jetpackcompose&logoColor=white&style=for-the-badge" alt="Jetpack Compose">
-  <img src="https://img.shields.io/badge/Institui%C3%A7%C3%A3o-UNIFOR-005691?style=for-the-badge" alt="UNIFOR">"
+  <img src="https://img.shields.io/badge/Institui%C3%A7%C3%A3o-UNIFOR-005691?style=for-the-badge" alt="UNIFOR">
 </p>
 
 O **Librify Mobile** é um aplicativo Android nativo de biblioteca virtual acadêmica, projetado para modernizar a experiência de leitura e gestão de obras na comunidade universitária. O app permite automatizar o processo de reservas de livros, consulta de acervo em tempo real e a publicação colaborativa de obras acadêmicas por parte dos alunos.
