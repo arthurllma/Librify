@@ -32,9 +32,9 @@ class BookDetailViewModel(
         
         // Simulating reviews for the specific book
         _reviews.value = listOf(
-            Review("1", "Arthur Lima", 5, "Obra prima! Indispensável.", "10/05/2024"),
-            Review("2", "Maria Santos", 4, "Impactante e existencialista.", "12/05/2024"),
-            Review("3", "Carlos Oliveira", 5, "A escrita de Kafka é única.", "15/05/2024")
+            Review("1", "Arthur Lima", 5, "Obra prima! Indispensável.", "10/05/2026"),
+            Review("2", "Vinicius Mobilio", 4, "Impactante e existencialista.", "12/05/2026"),
+            Review("3", "Enzo Constancio", 5, "A escrita de Kafka é única.", "15/05/2026")
         )
     }
 
