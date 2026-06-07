@@ -2,6 +2,7 @@ package br.unifor.librify.ui.features.chat
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import br.unifor.librify.BuildConfig
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -23,7 +24,9 @@ data class ChatMessage(
 
 class ChatViewModel : ViewModel() {
     private val client = OkHttpClient()
-    private val apiKey = "AQ.Ab8RN6Lh4nYx_Tcqg1S2AvNIGbHLwIA3E4-ZTubwrovx3PBA_Q"
+    
+    // Using the secure API key from BuildConfig
+    private val apiKey = BuildConfig.GEMINI_API_KEY
     private val apiUrl = "https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key=$apiKey"
 
     private val _messages = MutableStateFlow<List<ChatMessage>>(
@@ -54,8 +57,12 @@ class ChatViewModel : ViewModel() {
             _isLoading.value = true
             
             try {
-                val responseText = callGeminiApi(text)
-                _messages.value = _messages.value + ChatMessage(responseText, false)
+                if (apiKey.isBlank()) {
+                    _messages.value = _messages.value + ChatMessage("Configuração pendente: Adicione sua gemini.api.key no arquivo local.properties.", false)
+                } else {
+                    val responseText = callGeminiApi(text)
+                    _messages.value = _messages.value + ChatMessage(responseText, false)
+                }
             } catch (e: Exception) {
                 _messages.value = _messages.value + ChatMessage("Erro ao conectar com a IA: ${e.localizedMessage}", false)
             } finally {
@@ -65,7 +72,6 @@ class ChatViewModel : ViewModel() {
     }
 
     private suspend fun callGeminiApi(prompt: String): String = withContext(Dispatchers.IO) {
-        // Constructing JSON Payload
         val json = JSONObject()
         val contents = JSONArray()
         val parts = JSONArray()
@@ -87,7 +93,6 @@ class ChatViewModel : ViewModel() {
             
             val responseBody = response.body?.string() ?: return@withContext "Resposta vazia da IA."
             
-            // Extracting text from Gemini response JSON
             val responseJson = JSONObject(responseBody)
             val candidates = responseJson.getJSONArray("candidates")
             val firstCandidate = candidates.getJSONObject(0)
