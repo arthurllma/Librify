@@ -3,7 +3,7 @@
 <p align="center">
   <img src="app/Logo Unifor Documentos.png" width="120" alt="Logo UNIFOR"><br>
   <br>
-  <img src="https://img.shields.io/badge/Platform-Android-3DDC84?logo=android&logoColor=white&style=for-the-badge" alt="Android">
+  <img src="https://img.shields.io/badge/Plataforma-Android-3DDC84?logo=android&logoColor=white&style=for-the-badge" alt="Android">
   <img src="https://img.shields.io/badge/Language-Kotlin-7F52FF?logo=kotlin&logoColor=white&style=for-the-badge" alt="Kotlin">
   <img src="https://img.shields.io/badge/UI-Jetpack%20Compose-4285F4?logo=jetpackcompose&logoColor=white&style=for-the-badge" alt="Jetpack Compose">
   <img src="https://img.shields.io/badge/Institui%C3%A7%C3%A3o-UNIFOR-005691?style=for-the-badge" alt="UNIFOR">
