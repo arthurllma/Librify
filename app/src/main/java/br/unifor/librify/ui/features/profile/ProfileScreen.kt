@@ -32,6 +32,7 @@ fun ProfileScreen(
 ) {
     val userName by viewModel.userName.collectAsState()
     val userEmail by viewModel.userEmail.collectAsState()
+    val isAdmin by br.unifor.librify.data.repository.ActivityRepository.isAdmin.collectAsState()
 
     Scaffold(
         topBar = {
@@ -114,12 +115,14 @@ fun ProfileScreen(
                     onClick = onChatClick
                 )
             }
-            item {
-                ProfileMenuItem(
-                    icon = Icons.Default.AdminPanelSettings, 
-                    title = "Painel Administrativo", 
-                    onClick = onAdminClick
-                )
+            if (isAdmin) {
+                item {
+                    ProfileMenuItem(
+                        icon = Icons.Default.AdminPanelSettings, 
+                        title = "Painel Administrativo", 
+                        onClick = onAdminClick
+                    )
+                }
             }
             item {
                 ProfileMenuItem(

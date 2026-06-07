@@ -26,6 +26,7 @@ fun ChatScreen(
 ) {
     val messages by viewModel.messages.collectAsState()
     val inputText by viewModel.inputText.collectAsState()
+    val isLoading by viewModel.isLoading.collectAsState()
 
     Scaffold(
         topBar = {
@@ -54,6 +55,14 @@ fun ChatScreen(
             ) {
                 items(messages) { message ->
                     ChatBubble(message)
+                }
+                
+                if (isLoading) {
+                    item {
+                        Box(modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.CenterStart) {
+                            CircularProgressIndicator(modifier = Modifier.size(24.dp), strokeWidth = 2.dp)
+                        }
+                    }
                 }
             }
 
