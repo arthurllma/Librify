@@ -28,8 +28,6 @@ O **Librify Mobile** é um aplicativo Android nativo de biblioteca virtual acad�
   <img src="app/Screenshot_20260607_020937_Chatbot.jpg" width="220" alt="Assistente Virtual"/>
 </p>
 
-*(Dica: Substitua os caminhos acima pelos prints reais tirados do seu emulador para preencher a galeria!)*
-
 ---
 
 ## Contexto Acadêmico
