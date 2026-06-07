@@ -76,7 +76,7 @@ Para garantir performance, fluidez e uma arquitetura escalável padrão de merca
 1.  **Pré-requisitos:** Certifique-se de ter o **Android Studio (Versão Ladybug ou superior)** instalado e configurado com o **JDK 17**.
 2.  **Clonar o Repositório:**
     ```bash
-    git clone [https://github.com/seu-usuario/librify-mobile.git](https://github.com/seu-usuario/librify-mobile.git)
+    git clone https://github.com/arthurllma/Librify.git
     ```
 3.  **Sincronizar:** Abra o projeto no Android Studio e aguarde a indexação do Gradle baixar todas as dependências (`navigation-compose`, `material-icons-extended`, etc.).
 4.  **Configurar Dispositivo:** Recomenda-se rodar o app em um emulador ou dispositivo físico configurado com a **API 33 (Android 13)** ou superior.
