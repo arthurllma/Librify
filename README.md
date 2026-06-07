@@ -6,7 +6,7 @@ Este software foi desenvolvido como parte de um **Projeto de Extensão da Univer
 
 ---
 
-## 🏛️ Contexto Acadêmico
+## Contexto Acadêmico
 * **Instituição:** Universidade de Fortaleza (UNIFOR)
 * **Curso:** Ciência da Computação
 * **Disciplina:** Requisitos e Modelagem de Sistemas
@@ -15,23 +15,23 @@ Este software foi desenvolvido como parte de um **Projeto de Extensão da Univer
 
 ---
 
-## ✨ Funcionalidades Principais (Escopo Mobile)
+## Funcionalidades Principais (Escopo Mobile)
 
 O sistema foi totalmente modelado via UML (Casos de Uso e Diagramas de Atividades) e implementado com base nos requisitos funcionais adaptados para a experiência mobile nativa:
 
-*   **🔐 Autenticação Mobile (RF01 - RF03):** Login, Cadastro e Recuperação de Senha com persistência de estado e segurança de navegação (limpeza de pilha no logout).
-*   **🏠 Home e Destaque (RF05 - RF06):** Interface intuitiva com banner dinâmico do "Livro do Mês" e carrosséis de recomendação personalizados.
-*   **🔍 Catálogo e Busca (RF07):** Pesquisa reativa por título ou autor com filtragem instantânea via Chips de categorias acadêmicas.
-*   **📖 Detalhes e Reservas (RF08):** Tela de especificações completa com fluxos de reserva imediata e adição à lista de leitura.
-*   **⭐ Avaliação Colaborativa (RF09):** Sistema de feedback com notas de 1 a 5 estrelas e listagem de comentários de outros leitores.
-*   **📜 Histórico e Prazos (RF10 - RF11):** Painel de controle para o usuário monitorar empréstimos ativos, reservas pendentes e histórico de devoluções.
-*   **📤 Publicação Acadêmica (RF12 - RF13):** Formulário de envio de obras (PDF) com acompanhamento de status em tempo real (Em análise/Aprovado).
-*   **🤖 Assistente Virtual (RF14):** Chat interativo integrado para suporte ao usuário e dúvidas sobre o acervo.
-*   **🛡️ Painel Administrativo:** Interface exclusiva para moderadores realizarem a aprovação ou rejeição de publicações diretamente no app.
+*   ** Autenticação Mobile (RF01 - RF03):** Login, Cadastro e Recuperação de Senha com persistência de estado e segurança de navegação (limpeza de pilha no logout).
+*   ** Home e Destaque (RF05 - RF06):** Interface intuitiva com banner dinâmico do "Livro do Mês" e carrosséis de recomendação personalizados.
+*   ** Catálogo e Busca (RF07):** Pesquisa reativa por título ou autor com filtragem instantânea via Chips de categorias acadêmicas.
+*   ** Detalhes e Reservas (RF08):** Tela de especificações completa com fluxos de reserva imediata e adição à lista de leitura.
+*   ** Avaliação Colaborativa (RF09):** Sistema de feedback com notas de 1 a 5 estrelas e listagem de comentários de outros leitores.
+*   ** Histórico e Prazos (RF10 - RF11):** Painel de controle para o usuário monitorar empréstimos ativos, reservas pendentes e histórico de devoluções.
+*   ** Publicação Acadêmica (RF12 - RF13):** Formulário de envio de obras (PDF) com acompanhamento de status em tempo real (Em análise/Aprovado).
+*   ** Assistente Virtual (RF14):** Chat interativo integrado para suporte ao usuário e dúvidas sobre o acervo.
+*   ** Painel Administrativo:** Interface exclusiva para moderadores realizarem a aprovação ou rejeição de publicações diretamente no app.
 
 ---
 
-## 🚀 Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 Para garantir performance, fluidez e uma arquitetura escalável (Enterprise Level), utilizamos o stack tecnológico mais moderno da plataforma Android:
 
@@ -44,30 +44,7 @@ Para garantir performance, fluidez e uma arquitetura escalável (Enterprise Leve
 
 ---
 
-## 📁 Estrutura de Arquitetura (MVVM)
-
-```text
-br.unifor.librify/
-├── data/repository/           # Camada de Dados (ActivityRepository - Singleton)
-├── domain/model/              # Regras de Negócio (Entidades: Book, Loan, Publication, Review)
-├── ui/
-│   ├── components/            # UI Atoms (Botões, Cards, TextFields padronizados)
-│   ├── features/              # Módulos por Funcionalidade (Telas e ViewModels)
-│   │   ├── auth/              # Login, Register, ForgotPassword
-│   │   ├── catalog/           # Busca e Filtros
-│   │   ├── bookdetail/        # Detalhes e Ações
-│   │   ├── history/           # Gestão de Empréstimos
-│   │   ├── publish/           # Envio de Obras
-│   │   ├── chat/              # Suporte via IA Simulada
-│   │   └── admin/             # Moderação de Conteúdo
-│   ├── navigation/            # LibrifyNavGraph e MainScreen (BottomBar)
-│   └── theme/                 # Design System (Color.kt, Theme.kt)
-└── MainActivity.kt            # Entry Point
-```
-
----
-
-## 🛠️ Como Executar o App
+## Como Executar o App
 
 1.  **Requisitos:** Android Studio (Versão Ladybug ou superior) e JDK 17+.
 2.  **Clone:** Importe o projeto no Android Studio.
