@@ -1,7 +1,7 @@
 # Librify Mobile 📱📖
 
 <p align="center">
-  <img src="screenshots/logo_unifor.png" width="120" alt="Logo UNIFOR"><br>
+  <img src="app/Logo Unifor Documentos.png" width="120" alt="Logo UNIFOR"><br>
   <br>
   <img src="https://img.shields.io/badge/Platform-Android-3DDC84?logo=android&logoColor=white&style=for-the-badge" alt="Android">
   <img src="https://img.shields.io/badge/Language-Kotlin-7F52FF?logo=kotlin&logoColor=white&style=for-the-badge" alt="Kotlin">
@@ -85,6 +85,6 @@ Para garantir performance, fluidez e uma arquitetura escalável padrão de merca
 
 ---
 <p align="center">
-  <img src="screenshots/logo_unifor.png" width="50" alt="Logo UNIFOR Seal"><br>
+  <img src="app/Logo Unifor Documentos.png" width="50" alt="Logo UNIFOR Seal"><br>
   <i>Librify Mobile - Desenvolvido para transformar o ecossistema de leitura acadêmica da UNIFOR.</i>
 </p>
